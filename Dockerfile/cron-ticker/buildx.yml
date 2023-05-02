@@ -1,0 +1,13 @@
+https://docs.docker.com/build/building/multi-platform/#getting-started
+
+
+# multiplatform images
+# FROM --platform=$BUILDPLATFORM
+docker buildx build --platform linux/amd64,linux/arm64,linux/arm/v7 `
+<username>/<image>:latest --push .
+
+
+
+docker buildx build `
+--platform linux/amd64,linux/arm64 `
+-t danscarballo/cron-ticker:oso --push .
